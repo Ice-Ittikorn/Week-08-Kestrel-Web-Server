@@ -84,6 +84,8 @@
 
 3. บันทึกไฟล์ สั่ง `dotnet run` อีกครั้ง แล้วกด Refresh บนเบราว์เซอร์เพื่อดูผลลัพธ์
 
+<img width="705" height="191" alt="image" src="https://github.com/user-attachments/assets/c6a76a8e-eb44-40ef-a861-9eff6023e280" />
+
 ---
 
 #### กิจกรรมที่ 3 การแปลง C# Object เป็น JSON โดยอัตโนมัติ 
