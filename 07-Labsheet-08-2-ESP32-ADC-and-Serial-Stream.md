@@ -204,4 +204,12 @@ python -m esptool -p COM24 --chip esp32 -b 460800 --before default_reset --after
 ## ภารกิจท้าทาย (Micro-Challenge) (ประสบการณ์จากใบงาน LDR)
 - ให้นักศึกษาทดลองเปลี่ยนตัวต้านทานปรับค่าได้เป็น **LDR (Light Dependent Resistor)** ร่วมกับตัวต้านทาน $10\text{ k}\Omega$ แบ่งแรงดัน
 - ทดลองใช้ไฟฉายจากโทรศัพท์มือถือส่อง และเอามือปิดบังแสง สังเกตค่า ADC บนหน้าจอเทอร์มินัลว่าเปลี่ยนแปลงอย่างไร
+```
+        ใช้ไฟจากมือถือ ADC จะเพิ่ม เเต่ถ้าเอามือบัง ADC จะลดลง ยิ่งสว่าง ADC ยิ่งเพิ่มเเต่ถ้ามันมืด ADC จะลด
+```
 - บันทึกภาพถ่ายการต่อวงจรและภาพหน้าจอ Monitor ลงในรายงานผลการทดลอง
+
+<img width="3024" height="4032" alt="IMG_4051" src="https://github.com/user-attachments/assets/8e1f9968-2c8d-41fc-a181-574995641f1d" />
+
+<img width="727" height="315" alt="image" src="https://github.com/user-attachments/assets/a6ac44c5-f847-4872-81cd-517365c4b103" />
+
