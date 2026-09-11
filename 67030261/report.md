@@ -20,6 +20,8 @@
   - ถ้าใส่ /api/ แยกชัดระหว่าง endpoint ที่เป็นข้อมูล กับหน้าเว็บหรือไฟล์ static ตั้ง middleware, auth, หรือ rate limit เฉพาะกลุ่ม /api/ ได้ง่าย รองรับการทำ reverse proxy หรือแยก backend ในอนาคต กันไม่ให้ route ชนกับชื่อไฟล์ static 
   - ถ้าไม่ใส่ /api/ อาจเกิดปัญหา route ชนกับไฟล์ static ที่ชื่อเดียวกัน แยกยากว่า endpoint ไหนคืนข้อมูล endpoint ไหนคืนหน้าเว็บ ตั้ง security หรือ middleware เฉพาะกลุ่มยากขึ้น ขยายระบบภายหลัง เช่นทำ versioning /api/v1/ ทำได้ลำบากกว่า
 
+---
+
 # ใบงานการทดลองที่ 8.2
 
 #### [Checkpoint 2.1 ทดสอบความเข้าใจ]
@@ -42,4 +44,39 @@
 <img width="3024" height="4032" alt="IMG_4051" src="https://github.com/user-attachments/assets/8e1f9968-2c8d-41fc-a181-574995641f1d" />
 
 <img width="727" height="315" alt="image" src="https://github.com/user-attachments/assets/a6ac44c5-f847-4872-81cd-517365c4b103" />
+
+---
+
+# ใบงานการทดลองที่ 8.3
+### 🌟 กิจกรรมที่ 5: ทดสอบการทำงานสดๆ (The Magic Moment)
+<img width="602" height="268" alt="image" src="https://github.com/user-attachments/assets/bb1fbe21-8f4f-435f-b32f-310474acec0d" />
+
+
+#### 📋 [Checkpoint 3.1: ทดสอบกลไก Fallback Simulation]
+1. ขณะที่โปรแกรม C# กำลังรันอยู่ ให้ถอดสาย USB ของ ESP32 ออกจากคอมพิวเตอร์
+2. กด Refresh (F5) บนหน้าเบราว์เซอร์หลายๆ ครั้งติดต่อกัน สังเกตว่า:
+   - ค่า `dataSource` เปลี่ยนเป็นอะไร?
+   - ค่า `rawValue` ยังเปลี่ยนได้อยู่หรือไม่ และเปลี่ยนในลักษณะใด?
+   - **คำตอบ:** dataSource เป็น "Live Hardware (/dev/tty.usbserial-0001)" ส่วน rawValue เป็น 1922 ไม่เปลียนเลย
+
+## 🎯 ภารกิจท้าทาย (Micro-Challenge)
+- ให้นักศึกษาเพิ่มฟิลด์ `alertLevel` เข้าไปในผลลัพธ์ JSON ของ `/api/telemetry`:
+  - ถ้า `percentage` มากกว่า 85.0% ให้ส่งค่า `"DANGER (HIGH)"`
+  - ถ้า `percentage` ระหว่าง 70.0% - 85.0% ให้ส่งค่า `"WARNING"`
+  - ถ้า `percentage` ต่ำกว่า 70.0% ให้ส่งค่า `"NORMAL"`
+- บันทึกภาพหน้าจอเบราว์เซอร์ขณะหมุนไปที่ระดับต่างๆ เพื่อแสดงว่าฟิลด์ `alertLevel` ทำงานถูกต้อง
+
+### NORMAL
+<img width="479" height="289" alt="image" src="https://github.com/user-attachments/assets/fd19acb7-97c3-4035-9569-5779be2b2adf" />
+
+---
+
+## WARNING
+<img width="528" height="289" alt="image" src="https://github.com/user-attachments/assets/155a280c-41b5-4cc6-ab3c-8fd173bb0a9a" />
+
+---
+
+## DANGER
+<img width="580" height="281" alt="image" src="https://github.com/user-attachments/assets/c2d81485-807b-4f5e-81f7-e033c40d7722" />
+
 
